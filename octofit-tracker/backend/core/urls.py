@@ -16,14 +16,13 @@ router.register(r'workouts', views.WorkoutViewSet)
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = getattr(settings, 'BASE_API_URL', request.build_absolute_uri('/'))
+    base_url = getattr(settings, 'BASE_API_URL', request.build_absolute_uri('/')).rstrip('/')
     return Response({
-        'base_api_url': base_url,
-        'users': base_url.rstrip('/') + reverse('user-list', request=request, format=format),
-        'teams': base_url.rstrip('/') + reverse('team-list', request=request, format=format),
-        'activities': base_url.rstrip('/') + reverse('activity-list', request=request, format=format),
-        'leaderboard': base_url.rstrip('/') + reverse('leaderboard-list', request=request, format=format),
-        'workouts': base_url.rstrip('/') + reverse('workout-list', request=request, format=format),
+        'users': base_url + reverse('user-list', format=format),
+        'teams': base_url + reverse('team-list', format=format),
+        'activities': base_url + reverse('activity-list', format=format),
+        'leaderboard': base_url + reverse('leaderboard-list', format=format),
+        'workouts': base_url + reverse('workout-list', format=format),
     })
 
 urlpatterns = [
