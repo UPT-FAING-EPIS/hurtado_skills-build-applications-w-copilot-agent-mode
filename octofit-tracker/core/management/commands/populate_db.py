@@ -1,7 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
-
-from octofit_tracker.models import Team, Activity, Leaderboard, Workout
+from core.models import Team, Activity, Leaderboard, Workout
 from django.db import connection
 
 class Command(BaseCommand):
@@ -46,8 +45,9 @@ class Command(BaseCommand):
         Workout.objects.create(name='Pullups', description='10 pullups', user_email='batman@dc.com')
         Workout.objects.create(name='Squats', description='50 squats', user_email='superman@dc.com')
 
-        # Crear índice único en email
         with connection.cursor() as cursor:
             cursor.execute('db.users.createIndex({ "email": 1 }, { unique: true })')
+
+
 
         self.stdout.write(self.style.SUCCESS('La base de datos octofit_db ha sido poblada con datos de prueba.'))
