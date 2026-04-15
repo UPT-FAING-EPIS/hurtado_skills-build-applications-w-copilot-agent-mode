@@ -16,13 +16,13 @@ router.register(r'workouts', views.WorkoutViewSet)
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = "https://miniature-cod-9gg94j9w4wj2xx6v-8000.app.github.dev"
+    base_url = "https://miniature-cod-9gg94j9w4wj2xx6v-8000.app.github.dev/"
     return Response({
-        'users': f"{base_url}/users/",
-        'teams': f"{base_url}/teams/",
-        'activities': f"{base_url}/activities/",
-        'leaderboard': f"{base_url}/leaderboard/",
-        'workouts': f"{base_url}/workouts/",
+        'users': f"{base_url}users/",
+        'teams': f"{base_url}teams/",
+        'activities': f"{base_url}activities/",
+        'leaderboard': f"{base_url}leaderboard/",
+        'workouts': f"{base_url}workouts/",
     })
 
 urlpatterns = [
