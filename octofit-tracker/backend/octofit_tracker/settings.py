@@ -1,9 +1,6 @@
 # Configuración para incluir el nombre del codespace en los endpoints
 import os
-if os.getenv("CODESPACE_NAME"):
-    BASE_API_URL = f'https://{os.getenv("CODESPACE_NAME")}-8000.app.github.dev/'
-else:
-    BASE_API_URL = "http://localhost:8000/"
+BASE_API_URL = "https://miniature-cod-9gg94j9w4wj2xx6v-8000.app.github.dev/"
 """
 Django settings for octofit_tracker project.
 
