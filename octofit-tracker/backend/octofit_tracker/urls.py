@@ -20,3 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
 ]
+# BASE_API_URL = "https://miniature-cod-9gg94j9w4wj2xx6v-8000.app.github.dev/"
