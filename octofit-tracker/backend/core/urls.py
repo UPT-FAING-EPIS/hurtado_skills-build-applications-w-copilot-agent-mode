@@ -16,7 +16,7 @@ router.register(r'workouts', views.WorkoutViewSet)
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = getattr(settings, 'BASE_API_URL', request.build_absolute_uri('/')).rstrip('/')
+    base_url = settings.BASE_API_URL.rstrip('/')
     return Response({
         'users': base_url + reverse('user-list', format=format),
         'teams': base_url + reverse('team-list', format=format),
