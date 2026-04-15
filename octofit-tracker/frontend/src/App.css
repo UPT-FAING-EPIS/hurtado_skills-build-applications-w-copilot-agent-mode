@@ -1,0 +1,135 @@
+:root {
+  --bg-top: #f4fbff;
+  --bg-bottom: #d5e9ff;
+  --surface: #ffffff;
+  --ink: #15304d;
+  --muted-ink: #4f657c;
+  --brand: #007f8b;
+  --brand-dark: #015d66;
+  --accent: #ff7d59;
+  --accent-dark: #cc5f40;
+  --table-head: #eef8ff;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: linear-gradient(160deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+}
+
+.app-shell {
+  min-height: 100vh;
+  color: var(--ink);
+}
+
+.app-navbar {
+  background: linear-gradient(90deg, var(--brand-dark) 0%, var(--brand) 100%);
+  box-shadow: 0 8px 30px rgba(1, 93, 102, 0.25);
+}
+
+.app-brand-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.app-brand-title {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.app-navbar .nav-link {
+  color: #d8f7fb;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-navbar .nav-link:hover,
+.app-navbar .nav-link:focus {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.app-navbar .nav-link.active {
+  color: #07353b;
+  background-color: #f5feff;
+  font-weight: 600;
+}
+
+.app-heading,
+h2,
+h3 {
+  color: var(--brand-dark);
+  font-weight: 700;
+}
+
+a {
+  color: var(--brand-dark);
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-dark);
+}
+
+main.container {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(21, 48, 77, 0.12);
+}
+
+.list-group-item,
+table {
+  border-color: #d5e6f7;
+}
+
+.list-group-item {
+  color: var(--ink);
+  background-color: var(--surface);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: var(--surface);
+}
+
+thead th {
+  background-color: var(--table-head);
+  color: var(--brand-dark);
+}
+
+th,
+td {
+  border-bottom: 1px solid #deecfa;
+  padding: 0.65rem;
+}
+
+.btn,
+button {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.btn:hover,
+.btn:focus,
+button:hover,
+button:focus {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #ffffff;
+}
+
+p,
+small {
+  color: var(--muted-ink);
+}
